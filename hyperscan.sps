@@ -257,7 +257,7 @@ PARAM=
 # End Source File
 
 # Begin Source File
-SOURCE=.\main.cpp
+SOURCE=.\src\main.cpp
 USEPARAM=FALSE
 PARAM=
 # End Source File

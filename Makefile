@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		15:22:52	07/08/25
+#	Created by S+core IDE V2.6.1		14:07:49	07/09/25
 #
 ####################################################################################################
 
@@ -91,9 +91,9 @@ OBJFILES	=\
 	@echo libgloss.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\libgloss.d" -MT"$(OUTDIR)\libgloss.d" -o "$(OUTDIR)\libgloss.o" "C:\score-sdk\src\libgloss.c" 
 
-"$(OUTDIR)\main.o" "$(OUTDIR)\main.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\main.cpp"
+"$(OUTDIR)\main.o" "$(OUTDIR)\main.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\main.cpp"
 	@echo main.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\main.d" -MT"$(OUTDIR)\main.d" -o "$(OUTDIR)\main.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\main.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\main.d" -MT"$(OUTDIR)\main.d" -o "$(OUTDIR)\main.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\main.cpp" 
 
 "$(OUTDIR)\hyperscan_startup.o" "$(OUTDIR)\hyperscan_startup.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\hyperscan_startup.s"
 	@echo hyperscan_startup.s
