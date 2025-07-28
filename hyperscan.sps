@@ -250,6 +250,28 @@ PARAM=
 # End Source File
 
 # End Group
+# Begin Group "game"
+#PROP Default_Filter = 
+
+# Begin Source File
+SOURCE=.\src\Action.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\src\InputHandlers.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\src\MovementAction.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# End Group
 # Begin Source File
 SOURCE=..\..\..\..\src\libgloss.c
 USEPARAM=FALSE
@@ -353,6 +375,28 @@ PARAM=
 
 # Begin Source File
 SOURCE=..\..\..\..\include\uart\uart.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# End Group
+# Begin Group "game"
+#PROP Default_Filter = 
+
+# Begin Source File
+SOURCE=.\include\Action.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\InputHandlers.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\MovementAction.h
 USEPARAM=FALSE
 PARAM=
 # End Source File

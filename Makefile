@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		14:45:38	07/10/25
+#	Created by S+core IDE V2.6.1		17:30:40	07/16/25
 #
 ####################################################################################################
 
@@ -41,6 +41,9 @@ OBJFILES	=\
 	"$(OUTDIR)\hyperscan_startup.o"\
 	"$(OUTDIR)\main.o"\
 	"$(OUTDIR)\libgloss.o"\
+	"$(OUTDIR)\MovementAction.o"\
+	"$(OUTDIR)\InputHandlers.o"\
+	"$(OUTDIR)\Action.o"\
 	"$(OUTDIR)\uart.o"\
 	"$(OUTDIR)\tv.o"\
 	"$(OUTDIR)\norflash.o"\
@@ -87,6 +90,18 @@ OBJFILES	=\
 	@echo uart.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\uart.d" -MT"$(OUTDIR)\uart.d" -o "$(OUTDIR)\uart.o" "C:\score-sdk\src\uart\uart.c" 
 
+"$(OUTDIR)\Action.o" "$(OUTDIR)\Action.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp"
+	@echo Action.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Action.d" -MT"$(OUTDIR)\Action.d" -o "$(OUTDIR)\Action.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp" 
+
+"$(OUTDIR)\InputHandlers.o" "$(OUTDIR)\InputHandlers.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp"
+	@echo InputHandlers.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp" 
+
+"$(OUTDIR)\MovementAction.o" "$(OUTDIR)\MovementAction.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp"
+	@echo MovementAction.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp" 
+
 "$(OUTDIR)\libgloss.o" "$(OUTDIR)\libgloss.d": "C:\score-sdk\src\libgloss.c"
 	@echo libgloss.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\libgloss.d" -MT"$(OUTDIR)\libgloss.d" -o "$(OUTDIR)\libgloss.o" "C:\score-sdk\src\libgloss.c" 
@@ -120,6 +135,9 @@ DEPFILES	=\
 	"$(OUTDIR)\hyperscan_startup.d"\
 	"$(OUTDIR)\main.d"\
 	"$(OUTDIR)\libgloss.d"\
+	"$(OUTDIR)\MovementAction.d"\
+	"$(OUTDIR)\InputHandlers.d"\
+	"$(OUTDIR)\Action.d"\
 	"$(OUTDIR)\uart.d"\
 	"$(OUTDIR)\tv.d"\
 	"$(OUTDIR)\norflash.d"\
