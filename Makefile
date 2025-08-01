@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		17:30:40	07/16/25
+#	Created by S+core IDE V2.6.1		22:23:33	07/30/25
 #
 ####################################################################################################
 
@@ -43,6 +43,7 @@ OBJFILES	=\
 	"$(OUTDIR)\libgloss.o"\
 	"$(OUTDIR)\MovementAction.o"\
 	"$(OUTDIR)\InputHandlers.o"\
+	"$(OUTDIR)\Entity.o"\
 	"$(OUTDIR)\Action.o"\
 	"$(OUTDIR)\uart.o"\
 	"$(OUTDIR)\tv.o"\
@@ -94,6 +95,10 @@ OBJFILES	=\
 	@echo Action.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Action.d" -MT"$(OUTDIR)\Action.d" -o "$(OUTDIR)\Action.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp" 
 
+"$(OUTDIR)\Entity.o" "$(OUTDIR)\Entity.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Entity.cpp"
+	@echo Entity.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Entity.d" -MT"$(OUTDIR)\Entity.d" -o "$(OUTDIR)\Entity.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Entity.cpp" 
+
 "$(OUTDIR)\InputHandlers.o" "$(OUTDIR)\InputHandlers.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp"
 	@echo InputHandlers.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp" 
@@ -137,6 +142,7 @@ DEPFILES	=\
 	"$(OUTDIR)\libgloss.d"\
 	"$(OUTDIR)\MovementAction.d"\
 	"$(OUTDIR)\InputHandlers.d"\
+	"$(OUTDIR)\Entity.d"\
 	"$(OUTDIR)\Action.d"\
 	"$(OUTDIR)\uart.d"\
 	"$(OUTDIR)\tv.d"\

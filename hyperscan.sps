@@ -260,6 +260,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\src\Entity.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\src\InputHandlers.cpp
 USEPARAM=FALSE
 PARAM=
@@ -385,6 +391,12 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\Action.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\Entity.h
 USEPARAM=FALSE
 PARAM=
 # End Source File
