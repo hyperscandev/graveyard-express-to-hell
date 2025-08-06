@@ -4,6 +4,10 @@
 // holds the next id to assign
 unsigned short int Entity::nextId = 0;
 
+
+Entity::Entity() {
+}
+
 Entity::Entity(unsigned short x, unsigned short y, const char* c, unsigned short int color): id(++nextId) {
 	this->x = x;
 	this->y = y;
@@ -17,6 +21,14 @@ bool Entity::operator<(const Entity& other) const {
 
 unsigned short int Entity::getId() {
 	return this->id;
+}
+
+unsigned short int Entity::getPrevX() {
+	return this->prevX;
+}
+
+unsigned short int Entity::getPrevY() {
+	return this->prevY;
 }
 
 unsigned short int Entity::getX() {
@@ -44,6 +56,8 @@ void Entity::setY(unsigned short int y) {
 }
 
 void Entity::move(unsigned int dx, unsigned int dy) {
+	this->prevX = this->x;
 	this->x += dx;
+	this->prevY = this->y;
 	this->y += dy;
 }

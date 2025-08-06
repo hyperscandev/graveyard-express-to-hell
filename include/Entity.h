@@ -3,9 +3,12 @@
 
 class Entity {
 	public:
+		Entity();
 		Entity(unsigned short x, unsigned short y, const char* c, unsigned short int color);
 		bool operator<(const Entity& other) const;
 		unsigned short int getId();
+		unsigned short int getPrevX();
+		unsigned short int getPrevY();
 		unsigned short int getX();
 		unsigned short int getY();
 		void setX(unsigned short int x);
@@ -16,6 +19,8 @@ class Entity {
 	private:
 		unsigned short int id;	// Instance-specific ID
 		static unsigned short int nextId;	// Static counter for auto-incrementing IDs
+		unsigned short int prevX;
+		unsigned short int prevY;
 		unsigned short int x;
 		unsigned short int y;
 		const char* c;
