@@ -260,6 +260,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\src\Engine.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\src\Entity.cpp
 USEPARAM=FALSE
 PARAM=
@@ -391,6 +397,12 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\Action.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\Engine.h
 USEPARAM=FALSE
 PARAM=
 # End Source File
