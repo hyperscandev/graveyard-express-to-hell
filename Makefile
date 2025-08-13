@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		13:43:29	08/06/25
+#	Created by S+core IDE V2.6.1		17:45:07	08/11/25
 #
 ####################################################################################################
 
@@ -41,6 +41,7 @@ OBJFILES	=\
 	"$(OUTDIR)\hyperscan_startup.o"\
 	"$(OUTDIR)\main.o"\
 	"$(OUTDIR)\libgloss.o"\
+	"$(OUTDIR)\Tile_Types.o"\
 	"$(OUTDIR)\MovementAction.o"\
 	"$(OUTDIR)\InputHandlers.o"\
 	"$(OUTDIR)\Entity.o"\
@@ -112,6 +113,10 @@ OBJFILES	=\
 	@echo MovementAction.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp" 
 
+"$(OUTDIR)\Tile_Types.o" "$(OUTDIR)\Tile_Types.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Tile_Types.cpp"
+	@echo Tile_Types.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Tile_Types.d" -MT"$(OUTDIR)\Tile_Types.d" -o "$(OUTDIR)\Tile_Types.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Tile_Types.cpp" 
+
 "$(OUTDIR)\libgloss.o" "$(OUTDIR)\libgloss.d": "C:\score-sdk\src\libgloss.c"
 	@echo libgloss.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\libgloss.d" -MT"$(OUTDIR)\libgloss.d" -o "$(OUTDIR)\libgloss.o" "C:\score-sdk\src\libgloss.c" 
@@ -145,6 +150,7 @@ DEPFILES	=\
 	"$(OUTDIR)\hyperscan_startup.d"\
 	"$(OUTDIR)\main.d"\
 	"$(OUTDIR)\libgloss.d"\
+	"$(OUTDIR)\Tile_Types.d"\
 	"$(OUTDIR)\MovementAction.d"\
 	"$(OUTDIR)\InputHandlers.d"\
 	"$(OUTDIR)\Entity.d"\

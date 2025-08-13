@@ -283,6 +283,12 @@ USEPARAM=FALSE
 PARAM=
 # End Source File
 
+# Begin Source File
+SOURCE=.\src\Tile_Types.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
 # End Group
 # Begin Source File
 SOURCE=..\..\..\..\src\libgloss.c
@@ -421,6 +427,12 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\MovementAction.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\Tile_Types.h
 USEPARAM=FALSE
 PARAM=
 # End Source File

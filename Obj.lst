@@ -4,6 +4,7 @@
 INPUT("Debug\hyperscan_startup.o")
 INPUT("Debug\main.o")
 INPUT("Debug\libgloss.o")
+INPUT("Debug\Tile_Types.o")
 INPUT("Debug\MovementAction.o")
 INPUT("Debug\InputHandlers.o")
 INPUT("Debug\Entity.o")
