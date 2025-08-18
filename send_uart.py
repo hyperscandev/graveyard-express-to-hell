@@ -4,8 +4,6 @@ import sys
 import serial
 from datetime import datetime
 
-SHOW_PRINTF = 1
-
 CHUNK_SIZE = 1
 
 def show_progress(current, total):
@@ -20,10 +18,17 @@ def main():
     print(f"Sending {executable_size} bytes...");
 
     with serial.Serial(sys.argv[1], baudrate=115200, parity='E', stopbits=1, timeout=1) as ser:
+        ser.flush()
+        ser.read(1)
+        ser.flush()
+        ser.reset_output_buffer()
+        ser.reset_input_buffer()
         ser.write(executable_size.to_bytes(4, byteorder='little'))
         ser.flush()
         ser.read(1)
         ser.flush()
+        ser.reset_output_buffer()
+        ser.reset_input_buffer()
 
         start_time = datetime.now()
 
@@ -34,11 +39,6 @@ def main():
             show_progress(i, executable_size)
 
         print('\nTime elapsed: {0} (hh:mm:ss)'.format(str(datetime.now() - start_time)).split('.')[0])
-
-        if(SHOW_PRINTF):
-            while(1):
-                print(ser.readline().strip().decode("utf-8"))
-
         
 if __name__ == "__main__":
      if(len(sys.argv) != 3):
