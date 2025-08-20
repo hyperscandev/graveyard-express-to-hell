@@ -14,3 +14,19 @@ Tile new_tile(int walkable, int transparent, int ch, int fg_r, int fg_g, int fg_
     tile.dark.bg.b = bg_b;
     return tile;
 }
+
+Tile floor_tile = new_tile(
+    true, // walkable
+    true, // transparent
+    '.', // character code
+    255, 255, 255, // fg white
+    50, 50, 150    // bg black
+);
+
+Tile wall_tile = new_tile(
+    false, // walkable
+    false, // transparent
+    ' ', // character code
+    255, 255, 255, // fg white
+    0, 0, 100      // bg black
+);
