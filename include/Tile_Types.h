@@ -20,5 +20,8 @@ struct Tile {
 };
 
 // helper functiom
-Tile new_tile(int walkable, int transparent, int ch, int fg_r, int fg_g, int fg_b, int bg_r, int bg_g, int bg_b);
+Tile new_tile(int walkable, int transparent, char ch, int fg_r, int fg_g, int fg_b, int bg_r, int bg_g, int bg_b);
+
+extern Tile floor_tile;
+extern Tile wall_tile;
 #endif
