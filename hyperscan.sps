@@ -272,6 +272,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\src\GameMap.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\src\InputHandlers.cpp
 USEPARAM=FALSE
 PARAM=
@@ -415,6 +421,12 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\Entity.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\GameMap.h
 USEPARAM=FALSE
 PARAM=
 # End Source File

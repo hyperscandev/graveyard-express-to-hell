@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		17:45:07	08/11/25
+#	Created by S+core IDE V2.6.1		16:46:51	08/26/25
 #
 ####################################################################################################
 
@@ -44,6 +44,7 @@ OBJFILES	=\
 	"$(OUTDIR)\Tile_Types.o"\
 	"$(OUTDIR)\MovementAction.o"\
 	"$(OUTDIR)\InputHandlers.o"\
+	"$(OUTDIR)\GameMap.o"\
 	"$(OUTDIR)\Entity.o"\
 	"$(OUTDIR)\Engine.o"\
 	"$(OUTDIR)\Action.o"\
@@ -105,6 +106,10 @@ OBJFILES	=\
 	@echo Entity.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Entity.d" -MT"$(OUTDIR)\Entity.d" -o "$(OUTDIR)\Entity.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Entity.cpp" 
 
+"$(OUTDIR)\GameMap.o" "$(OUTDIR)\GameMap.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\GameMap.cpp"
+	@echo GameMap.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\GameMap.d" -MT"$(OUTDIR)\GameMap.d" -o "$(OUTDIR)\GameMap.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\GameMap.cpp" 
+
 "$(OUTDIR)\InputHandlers.o" "$(OUTDIR)\InputHandlers.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp"
 	@echo InputHandlers.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp" 
@@ -153,6 +158,7 @@ DEPFILES	=\
 	"$(OUTDIR)\Tile_Types.d"\
 	"$(OUTDIR)\MovementAction.d"\
 	"$(OUTDIR)\InputHandlers.d"\
+	"$(OUTDIR)\GameMap.d"\
 	"$(OUTDIR)\Entity.d"\
 	"$(OUTDIR)\Engine.d"\
 	"$(OUTDIR)\Action.d"\
