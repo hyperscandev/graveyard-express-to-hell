@@ -6,12 +6,8 @@ Tile new_tile(int walkable, int transparent, char ch, int fg_r, int fg_g, int fg
     tile.walkable = walkable;
     tile.transparent = transparent;
     tile.dark.ch = ch;
-    tile.dark.fg.r = fg_r;
-    tile.dark.fg.g = fg_g;
-    tile.dark.fg.b = fg_b;
-    tile.dark.bg.r = bg_r;
-    tile.dark.bg.g = bg_g;
-    tile.dark.bg.b = bg_b;
+    tile.dark.fg = RGB565(fg_r, fg_g, fg_b);
+    tile.dark.bg = RGB565(bg_r, bg_g, bg_b);
     return tile;
 }
 

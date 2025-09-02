@@ -1,16 +1,13 @@
 #ifndef TILE_TYPES_H
 #define TILE_TYPES_H
 
-struct RGB {
-	unsigned char r;
-	unsigned char g;
-	unsigned char b;
-};
+// include required libraries
+#include "tv/tv.h"
 
 struct Graphic {
 	char ch;
-	RGB fg;
-	RGB bg;
+	unsigned short fg;
+	unsigned short bg;
 };
 
 struct Tile {
