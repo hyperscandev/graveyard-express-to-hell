@@ -5,9 +5,9 @@
 
 class MovementAction: public Action {
 	public:
-		MovementAction(unsigned short x, unsigned short y);
-		unsigned short int getDX();
-		unsigned short int getDY();
+		MovementAction(const unsigned short x, const unsigned short y);
+		unsigned short int getDX() const;
+		unsigned short int getDY() const;
 	private:
 		unsigned short int dx;
 		unsigned short int dy;
