@@ -5,7 +5,7 @@
 #include "tv/tv.h"
 
 struct Graphic {
-	char ch;
+	unsigned char ch;
 	unsigned short fg;
 	unsigned short bg;
 };
@@ -17,7 +17,7 @@ struct Tile {
 };
 
 // helper functiom
-Tile new_tile(const int walkable, const int transparent, const char ch, const int fg_r, const int fg_g, const int fg_b, const int bg_r, const int bg_g, const int bg_b);
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char fg_r, const unsigned char fg_g, const unsigned char fg_b, const unsigned char bg_r, const unsigned char bg_g, const unsigned char bg_b);
 
 extern Tile floor_tile;
 extern Tile wall_tile;

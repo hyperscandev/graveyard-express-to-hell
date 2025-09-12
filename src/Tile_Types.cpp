@@ -1,7 +1,7 @@
 // include the header
 #include "../include/Tile_Types.h"
 
-Tile new_tile(const int walkable, const int transparent, const char ch, const int fg_r, const int fg_g, const int fg_b, const int bg_r, const int bg_g, const int bg_b) {
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char fg_r, const unsigned char fg_g, const unsigned char fg_b, const unsigned char bg_r, const unsigned char bg_g, const unsigned char bg_b) {
 	Tile tile;
     tile.walkable = walkable;
     tile.transparent = transparent;
