@@ -2,6 +2,12 @@
 #include "../include/GameMap.h"
 
 /**
+ * Default Class constructor
+ */
+ GameMap::GameMap() {
+ }
+
+/**
  * Class constructor
  */
  GameMap::GameMap(unsigned int width, unsigned int height) {

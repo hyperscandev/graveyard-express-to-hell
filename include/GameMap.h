@@ -7,6 +7,7 @@
 
 class GameMap {
 	public:
+		GameMap();
 		GameMap(unsigned int width, unsigned int height);
 		bool in_bounds(unsigned short int x, unsigned short int y);
 		void render(unsigned short *fb);
