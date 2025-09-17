@@ -3,13 +3,15 @@
 
 unsigned short *fb = (unsigned short *) 0xA0400000;
 
-Engine::Engine(std::set<Entity> entities, EventHandler event_handler, Entity player) {
+Engine::Engine(std::set<Entity> entities, EventHandler event_handler, GameMap game_map, Entity player) {
 	// assign frabebuffer pointer
 	this->fb = (unsigned short *) 0xA0400000;
 	// store instance of entities
 	this->entities = entities;
 	// store instance of event handler
 	this->event_handler = event_handler;
+	// store instance of game map
+	this->game_map = game_map;
 	// store instance of player instance
 	this->player = player;
 	
