@@ -41,8 +41,11 @@ int main(){
 	/*create the player entity */
 	Entity player = Entity(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "@", 0);
 
+	/* create instance of the game map */
+	GameMap game_map = GameMap(0, 0);
+
 	// create instance of the game engine
-	Engine engine = Engine(entities, events, player);
+	Engine engine = Engine(entities, events, game_map, player);
 
 	while(1){
 		// render the screen
