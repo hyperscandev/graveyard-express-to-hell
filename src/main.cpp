@@ -17,6 +17,9 @@ This is the basic Hello World! example. It contains the very barebones code nece
 // constants
 const unsigned short int SCREEN_WIDTH = 79;
 const unsigned short int SCREEN_HEIGHT = 29;
+const unsigned short int MAP_WIDTH = 79;
+const unsigned short int MAP_HEIGHT = 24;
+
 
 int main(){
 	
@@ -42,7 +45,7 @@ int main(){
 	Entity player = Entity(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "@", 0);
 
 	/* create instance of the game map */
-	GameMap game_map = GameMap(0, 0);
+	GameMap game_map = GameMap(MAP_WIDTH, MAP_HEIGHT);
 
 	// create instance of the game engine
 	Engine engine = Engine(entities, events, game_map, player);
