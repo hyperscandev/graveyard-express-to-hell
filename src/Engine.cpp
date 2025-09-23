@@ -32,6 +32,9 @@ void Engine::handle_events() {
 }
 
 void Engine::render() {
+	// draw the map
+	game_map.render(fb);
+
 	for (std::set<Entity>::iterator it = entities.begin(); it != entities.end(); ++it) {
 		Entity entity = *it;
 		
