@@ -15,14 +15,14 @@ Tile floor_tile = new_tile(
     true, // walkable
     true, // transparent
     '.', // character code
-    255, 255, 255, // fg white
-    50, 50, 150    // bg black
+    100, 100, 100, // fg grey
+    0, 0, 0 // bg black
 );
 
 Tile wall_tile = new_tile(
     false, // walkable
     false, // transparent
-    ' ', // character code
-    255, 255, 255, // fg white
-    0, 0, 100      // bg black
+    '#', // character code
+    100, 100, 100, // fg grey
+    0, 0, 0 // bg black
 );
