@@ -10,6 +10,7 @@ class GameMap {
 		GameMap();
 		GameMap(unsigned int width, unsigned int height);
 		bool in_bounds(unsigned short int x, unsigned short int y);
+		bool is_walkable(unsigned short int x, unsigned short int y);
 		void render(unsigned short *fb);
 	private:
 		unsigned int width;

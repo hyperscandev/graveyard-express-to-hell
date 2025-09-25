@@ -38,6 +38,13 @@ bool GameMap::in_bounds(unsigned short int x, unsigned short int y) {
 }
 
 /**
+ * Returns whether the tile at the x/y coordinates are walkable
+ */
+bool GameMap::is_walkable(unsigned short int x, unsigned short int y) {
+	return tiles[x][y].walkable;
+}
+
+/**
  * Renders the map
  */
 void GameMap::render(unsigned short *fb) {
