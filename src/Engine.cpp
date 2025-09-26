@@ -25,8 +25,12 @@ void Engine::handle_events() {
 	if (dynamic_cast<MovementAction*>(action) != NULL) {
 		if (MovementAction* moveAction = dynamic_cast<MovementAction*>(action)) {
 
-			// set player's new position
-			this->player.move(moveAction->getDX(), moveAction->getDY());
+			// if the tile is walkable
+			if(game_map.is_walkable(player.getX() + moveAction->getDX(), player.getY() + moveAction->getDY())) {
+
+				// set player's new position
+				this->player.move(moveAction->getDX(), moveAction->getDY());
+			}
 		}
 	}
 }
