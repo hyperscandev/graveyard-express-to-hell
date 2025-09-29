@@ -1,3 +1,6 @@
+# Python files
+__pycache__/
+
 # Build Artifacts
 *.d
 *.elf
