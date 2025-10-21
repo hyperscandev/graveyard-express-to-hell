@@ -30,6 +30,12 @@
  	tiles[4][3] = wall_tile;
  	tiles[5][3] = wall_tile;
  }
+ 
+ void GameMap::set_tile(unsigned short int x, unsigned short int y, const Tile& tile) {
+    if (x < width && y < height)
+        tiles[x][y] = tile;
+}
+ 
 /**
  * Returns whether the coordinates are in bounds of the map
  */
