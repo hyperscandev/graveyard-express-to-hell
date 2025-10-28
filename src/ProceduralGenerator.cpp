@@ -1,7 +1,7 @@
 // include the header
 #include "../include/ProceduralGenerator.h"
 
-GameMap generateDungeon(unsigned short int map_width, unsigned short int map_height) {
+GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_height) {
 	GameMap dungeon = GameMap(map_width, map_height);
 
 	RectangularRoom room_1 = RectangularRoom(20, 15, 10, 15);
