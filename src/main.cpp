@@ -9,6 +9,7 @@ This is the basic Hello World! example. It contains the very barebones code nece
 */
 
 #include "tv/tv.h"
+#include "../include/ProceduralGenerator.h"
 #include "../include/Entity.h"
 #include "../include/InputHandlers.h"
 #include "../include/Engine.h"
@@ -44,8 +45,8 @@ int main(){
 	/*create the player entity */
 	Entity player = Entity(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "@", 0);
 
-	/* create instance of the game map */
-	GameMap game_map = GameMap(MAP_WIDTH, MAP_HEIGHT);
+	/* create a dungeon */
+	GameMap game_map = generate_dungeon(MAP_WIDTH, MAP_HEIGHT);
 
 	// create instance of the game engine
 	Engine engine = Engine(entities, events, game_map, player);
