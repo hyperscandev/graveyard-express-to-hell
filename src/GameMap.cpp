@@ -18,17 +18,12 @@
  	// initalize the 2d array for the map tiles
  	tiles = std::vector<std::vector<Tile> >(width, std::vector<Tile>(height));
  	
- 	/** temporary */
+ 	/** fill the game map entirely with walls; the procedural generator will carve out rooms later */
  	for(unsigned short int x = 0; x < this->width; x++) {
 		for(unsigned short int y = 0; y < this->height; y++) {
-			tiles[x][y] = floor_tile;
+			tiles[x][y] = wall_tile;
 		}
  	}
- 	
- 	// create temporary wall
- 	tiles[3][3] = wall_tile;
- 	tiles[4][3] = wall_tile;
- 	tiles[5][3] = wall_tile;
  }
  
  void GameMap::set_tile(unsigned short int x, unsigned short int y, const Tile& tile) {
