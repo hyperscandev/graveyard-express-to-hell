@@ -4,8 +4,8 @@
 GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_height) {
 	GameMap dungeon = GameMap(map_width, map_height);
 
-	RectangularRoom room_1 = RectangularRoom(20, 15, 10, 15);
-	RectangularRoom room_2 = RectangularRoom(35, 15, 10, 15);
+	RectangularRoom room_1 = RectangularRoom(20, 5, 5, 7);
+	RectangularRoom room_2 = RectangularRoom(35, 5, 5, 7);
 
 	// --- Fill room_1.inner with floor tiles ---
     std::pair<RectangularRoom::Slice, RectangularRoom::Slice> inner_1 = room_1.inner();
