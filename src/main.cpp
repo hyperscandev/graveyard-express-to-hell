@@ -43,7 +43,7 @@ int main(){
 	EventHandler events = EventHandler();
 
 	/*create the player entity */
-	Entity player = Entity(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "@", 0);
+	Entity player = Entity(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 5, "@", 0);
 
 	/* create a dungeon */
 	GameMap game_map = generate_dungeon(MAP_WIDTH, MAP_HEIGHT);
