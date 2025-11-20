@@ -25,3 +25,37 @@ GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_he
 
 	return dungeon;
 }
+
+// Tunnel generator function
+std::vector<Point> tunnel_between(const Point &start, const Point &end) {
+    std::vector<Point> tunnel;
+
+    int x1 = start.first;
+    int y1 = start.second;
+    int x2 = end.first;
+    int y2 = end.second;
+
+    // 50% chance horizontal-first or vertical-first
+    bool horizontal_first = (static_cast<float>(std::rand()) / RAND_MAX) < 0.5f;
+
+    int corner_x, corner_y;
+    if (horizontal_first) {
+        // Move horizontally, then vertically
+        corner_x = x2;
+        corner_y = y1;
+    } else {
+        // Move vertically, then horizontally
+        corner_x = x1;
+        corner_y = y2;
+    }
+
+    // First leg
+    std::vector<Point> leg1 = bresenham(x1, y1, corner_x, corner_y);
+    tunnel.insert(tunnel.end(), leg1.begin(), leg1.end());
+
+    // Second leg
+    std::vector<Point> leg2 = bresenham(corner_x, corner_y, x2, y2);
+    tunnel.insert(tunnel.end(), leg2.begin(), leg2.end());
+
+    return tunnel;
+}
