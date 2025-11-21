@@ -11,7 +11,7 @@ SECTIONS
 {
 	/* .exception 0xA00901fc : {release} */
 	/* .exception 0xA00001fc : {recovery} */
-	.exception 0xA00901fc :
+	.exception 0xA00001fc :
   {
     *(.exception_vec)
   } = 0
@@ -22,7 +22,7 @@ SECTIONS
   /* Read-only sections, merged into text segment: */
   /* . = 0xA0091000; (release) */
   /* . = 0xA0001000; (recovery) */
-  . = 0xA0091000;
+  . = 0xA0001000;
   .interp         : { *(.interp) }
   .hash           : { *(.hash) }
   .dynsym         : { *(.dynsym) }
