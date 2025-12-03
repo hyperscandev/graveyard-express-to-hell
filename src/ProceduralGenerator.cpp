@@ -22,6 +22,14 @@ GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_he
             dungeon.set_tile(x, y, floor_tile);
         }
     }
+    
+	std::vector<Point> path = tunnel_between(room_2.center(), room_1.center());
+
+	for (std::vector<Point>::const_iterator it = path.begin(); it != path.end(); ++it) {
+    	int x = it->first;
+    	int y = it->second;
+    	dungeon.set_tile(x, y, floor_tile);
+	}
 
 	return dungeon;
 }
