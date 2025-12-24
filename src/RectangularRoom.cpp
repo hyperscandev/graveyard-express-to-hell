@@ -22,3 +22,7 @@ std::pair<RectangularRoom::Slice, RectangularRoom::Slice> RectangularRoom::inner
 		RectangularRoom::Slice( static_cast<int>(y1) + 1, static_cast<int>(y2) )
 	);
 }
+
+bool RectangularRoom::intersects(RectangularRoom other) const {
+	return (this->x1 <= other.x2 && this->x2 >= other.x1 && this->y1 <= other.y2 && this->y2 >= other.y1);
+}

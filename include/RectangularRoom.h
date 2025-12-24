@@ -16,6 +16,7 @@ class RectangularRoom {
 		RectangularRoom(unsigned short int x, unsigned short int y, unsigned short int width, unsigned short int height);
 		std::pair<int, int> center() const;
 		std::pair<Slice, Slice> inner() const;
+		bool intersects(RectangularRoom other) const;
 	private:
 		unsigned short int x1;
 		unsigned short int y1;
