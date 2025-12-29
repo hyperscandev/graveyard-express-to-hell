@@ -20,7 +20,9 @@ const unsigned short int SCREEN_WIDTH = 79;
 const unsigned short int SCREEN_HEIGHT = 29;
 const unsigned short int MAP_WIDTH = 79;
 const unsigned short int MAP_HEIGHT = 24;
-
+const unsigned short int ROOM_MAX_SIZE = 5;
+const unsigned short int ROOM_MIN_SIZE = 3;
+const unsigned short int MAX_ROOMS = 10;
 
 int main(){
 	
