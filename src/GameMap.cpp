@@ -25,6 +25,14 @@
 		}
  	}
  }
+
+ unsigned int GameMap::getWidth() const {
+ 	return this->width;
+ }
+ 
+ unsigned int GameMap::getHeight() const {
+ 	return this->height;
+ }
  
  void GameMap::set_tile(unsigned short int x, unsigned short int y, const Tile& tile) {
     if (x < width && y < height)

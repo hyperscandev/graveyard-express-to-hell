@@ -9,6 +9,8 @@ class GameMap {
 	public:
 		GameMap();
 		GameMap(unsigned int width, unsigned int height);
+		unsigned int getWidth() const;
+		unsigned int getHeight() const;
 		void set_tile(unsigned short int x, unsigned short int y, const Tile& tile);
 		bool in_bounds(unsigned short int x, unsigned short int y);
 		bool is_walkable(unsigned short int x, unsigned short int y);
