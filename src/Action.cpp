@@ -1,4 +1,7 @@
 // include header
 #include "../include/Action.h"
 
-Action::~Action() {}
+/**
+ * Pure virtual class destructor
+ */
+ Action::~Action() {}
