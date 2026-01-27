@@ -1,8 +1,17 @@
 // include the header
 #include "../include/Engine.h"
 
+//! framebuffer address
 unsigned short *fb = (unsigned short *) 0xA0400000;
 
+/**
+ * full class constructor
+ *
+ * @param entities set of entities to update and render
+ * @param event_handler instance of event handler
+ * @param game_map instance of game map
+ * @param player instance of player entity
+ */
 Engine::Engine(std::set<Entity> entities, EventHandler event_handler, GameMap game_map, Entity player) {
 	// assign frabebuffer pointer
 	this->fb = (unsigned short *) 0xA0400000;
@@ -17,6 +26,9 @@ Engine::Engine(std::set<Entity> entities, EventHandler event_handler, GameMap ga
 	
 }
 
+/**
+ * handles user input
+ */
 void Engine::handle_events() {
 	// get events
 	Action* action = this->event_handler.ev_input();
@@ -35,6 +47,9 @@ void Engine::handle_events() {
 	}
 }
 
+/**
+ * renders the game map, entities and player to the framebuffer(screen)
+ */
 void Engine::render() {
 	// draw the map
 	game_map.render(fb);
