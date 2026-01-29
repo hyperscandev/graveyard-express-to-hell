@@ -1,11 +1,17 @@
 // include the header
 #include "../include/InputHandlers.h"
 
+/**
+ * Default class constructor
+ */
 EventHandler::EventHandler(){
 	/* Initalize Mattel HyperScan controller interface */
 	hs_controller_init();
 }
 
+/**
+ * Gets user input and performs movement based on the input
+ */
 Action* EventHandler::ev_input() {
  
 	// read the controller
