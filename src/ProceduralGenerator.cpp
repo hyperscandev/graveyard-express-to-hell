@@ -1,6 +1,14 @@
 // include the header
 #include "../include/ProceduralGenerator.h"
 
+/**
+ * Generates a dungeon of a given width and height
+ *
+ * @param map_width the width of the game map the dungeon will reside
+ * @param map_height the height of the game map the dungeon will reside
+ *
+ * @return game map instance containing the dungeon
+ */
 GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_height) {
 	GameMap dungeon = GameMap(map_width, map_height);
 
@@ -34,7 +42,14 @@ GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_he
 	return dungeon;
 }
 
-// Tunnel generator function
+/**
+ * Generates a tunnel between two rooms
+ *
+ * @param start the starting point
+ * @param end the ending point
+ *
+ * @return a vector of points that forms a tunnel connecting two rooms
+ */
 std::vector<Point> tunnel_between(const Point &start, const Point &end) {
     std::vector<Point> tunnel;
 
