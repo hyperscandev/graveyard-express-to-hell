@@ -260,6 +260,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\src\Bresenham.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\src\Engine.cpp
 USEPARAM=FALSE
 PARAM=
@@ -285,6 +291,18 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\src\MovementAction.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\src\ProceduralGenerator.cpp
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\src\RectangularRoom.cpp
 USEPARAM=FALSE
 PARAM=
 # End Source File
@@ -414,6 +432,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\include\Bresenham.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\include\Engine.h
 USEPARAM=FALSE
 PARAM=
@@ -439,6 +463,18 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\MovementAction.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\ProceduralGenerator.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=.\include\RectangularRoom.h
 USEPARAM=FALSE
 PARAM=
 # End Source File

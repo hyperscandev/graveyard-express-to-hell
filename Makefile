@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		12:57:10	09/26/25
+#	Created by S+core IDE V2.6.1		14:37:52	02/17/26
 #
 ####################################################################################################
 
@@ -42,11 +42,14 @@ OBJFILES	=\
 	"$(OUTDIR)\main.o"\
 	"$(OUTDIR)\libgloss.o"\
 	"$(OUTDIR)\Tile_Types.o"\
+	"$(OUTDIR)\RectangularRoom.o"\
+	"$(OUTDIR)\ProceduralGenerator.o"\
 	"$(OUTDIR)\MovementAction.o"\
 	"$(OUTDIR)\InputHandlers.o"\
 	"$(OUTDIR)\GameMap.o"\
 	"$(OUTDIR)\Entity.o"\
 	"$(OUTDIR)\Engine.o"\
+	"$(OUTDIR)\Bresenham.o"\
 	"$(OUTDIR)\Action.o"\
 	"$(OUTDIR)\uart.o"\
 	"$(OUTDIR)\tv.o"\
@@ -98,6 +101,10 @@ OBJFILES	=\
 	@echo Action.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Action.d" -MT"$(OUTDIR)\Action.d" -o "$(OUTDIR)\Action.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp" 
 
+"$(OUTDIR)\Bresenham.o" "$(OUTDIR)\Bresenham.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Bresenham.cpp"
+	@echo Bresenham.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Bresenham.d" -MT"$(OUTDIR)\Bresenham.d" -o "$(OUTDIR)\Bresenham.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Bresenham.cpp" 
+
 "$(OUTDIR)\Engine.o" "$(OUTDIR)\Engine.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Engine.cpp"
 	@echo Engine.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Engine.d" -MT"$(OUTDIR)\Engine.d" -o "$(OUTDIR)\Engine.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Engine.cpp" 
@@ -117,6 +124,14 @@ OBJFILES	=\
 "$(OUTDIR)\MovementAction.o" "$(OUTDIR)\MovementAction.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp"
 	@echo MovementAction.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp" 
+
+"$(OUTDIR)\ProceduralGenerator.o" "$(OUTDIR)\ProceduralGenerator.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\ProceduralGenerator.cpp"
+	@echo ProceduralGenerator.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\ProceduralGenerator.d" -MT"$(OUTDIR)\ProceduralGenerator.d" -o "$(OUTDIR)\ProceduralGenerator.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\ProceduralGenerator.cpp" 
+
+"$(OUTDIR)\RectangularRoom.o" "$(OUTDIR)\RectangularRoom.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\RectangularRoom.cpp"
+	@echo RectangularRoom.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\RectangularRoom.d" -MT"$(OUTDIR)\RectangularRoom.d" -o "$(OUTDIR)\RectangularRoom.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\RectangularRoom.cpp" 
 
 "$(OUTDIR)\Tile_Types.o" "$(OUTDIR)\Tile_Types.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Tile_Types.cpp"
 	@echo Tile_Types.cpp
@@ -156,11 +171,14 @@ DEPFILES	=\
 	"$(OUTDIR)\main.d"\
 	"$(OUTDIR)\libgloss.d"\
 	"$(OUTDIR)\Tile_Types.d"\
+	"$(OUTDIR)\RectangularRoom.d"\
+	"$(OUTDIR)\ProceduralGenerator.d"\
 	"$(OUTDIR)\MovementAction.d"\
 	"$(OUTDIR)\InputHandlers.d"\
 	"$(OUTDIR)\GameMap.d"\
 	"$(OUTDIR)\Entity.d"\
 	"$(OUTDIR)\Engine.d"\
+	"$(OUTDIR)\Bresenham.d"\
 	"$(OUTDIR)\Action.d"\
 	"$(OUTDIR)\uart.d"\
 	"$(OUTDIR)\tv.d"\
