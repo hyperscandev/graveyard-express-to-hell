@@ -3,6 +3,7 @@
 
 // include required libraries
 #include <vector>
+#include <cstdlib>
 
 //! type alias for readability
 typedef std::pair<int, int> Point;
