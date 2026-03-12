@@ -1,5 +1,5 @@
-#ifndef ENTITY
-#define ENTITY
+#ifndef ENTITY_H
+#define ENTITY_H
 
 /**
  * Class to represent a single game entity
