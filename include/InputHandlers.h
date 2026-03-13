@@ -1,5 +1,5 @@
-#ifndef INPUTHANDLERS
-#define INPUTHANDLERS
+#ifndef INPUTHANDLERS_H
+#define INPUTHANDLERS_H
 
 #include "hyperscan/hs_controller/hs_controller.h"
 #include <cstddef>
