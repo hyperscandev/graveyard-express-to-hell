@@ -1,5 +1,6 @@
 // include the header
 #include "../include/Engine.h"
+#include "../include/InputHandlers.h"
 
 //! framebuffer address
 unsigned short *fb = (unsigned short *) 0xA0400000;
@@ -12,7 +13,7 @@ unsigned short *fb = (unsigned short *) 0xA0400000;
  * @param game_map instance of game map
  * @param player instance of player entity
  */
-Engine::Engine(std::set<Entity> entities, EventHandler event_handler, GameMap game_map, Entity player) {
+Engine::Engine(std::set<Entity> entities, EventHandler& event_handler, GameMap game_map, Entity player): event_handler(event_handler) {
 	// assign frabebuffer pointer
 	this->fb = (unsigned short *) 0xA0400000;
 	// store instance of entities
