@@ -3,7 +3,7 @@
 
 #include "hyperscan/hs_controller/hs_controller.h"
 #include <cstddef>
-#include "../include/MovementAction.h"
+#include "MovementAction.h"
 
 /**
  * Handles events like getting user input
