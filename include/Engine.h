@@ -3,8 +3,8 @@
 
 // include required libraries
 #include "tv/tv.h"
-#include "../include/Entity.h"
-#include "../include/GameMap.h"
+#include "Entity.h"
+#include "GameMap.h"
 #include <set>
 
 class EventHandler;
