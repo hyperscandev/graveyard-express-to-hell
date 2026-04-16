@@ -2,7 +2,7 @@
 #define GAMEMAP_H
 
 #include "tv/tv.h"
-#include "../include/Tile_Types.h"
+#include "Tile_Types.h"
 #include <vector>
 
 /**
