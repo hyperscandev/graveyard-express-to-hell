@@ -14,6 +14,8 @@ class MovementAction: public Action {
 		unsigned short int getDX() const;
 		//! returns the y delta
 		unsigned short int getDY() const;
+		//! virtual function implementation for handling movement
+		void perform(Engine engine, Entity entity);
 	private:
 		//! the x delta
 		unsigned short int dx;
