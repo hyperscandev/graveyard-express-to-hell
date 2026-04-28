@@ -22,6 +22,7 @@ class Engine {
 		void handle_events();
 		//! renders player, entities and game map to the framebuffer
 		void render();
+		const GameMap& getGameMapInstance() const;
 	private:
 		//! stupid framebuffer for now
 		unsigned short *fb;
