@@ -70,3 +70,13 @@ void Engine::render() {
 		// draw the player on the screen
 		tv_print(fb, player.getX(), player.getY(), player.getChar());
 }
+
+/**
+ * returns the instance of GameMap
+ *
+ * @return GameMap instance
+ *
+ */
+const GameMap& Engine::getGameMapInstance() const {
+	return game_map;
+}
