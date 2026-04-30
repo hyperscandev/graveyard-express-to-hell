@@ -23,7 +23,7 @@ class GameMap {
 		//! sets a tile at a given x/y coordinate
 		void set_tile(unsigned short int x, unsigned short int y, const Tile& tile);
 		//! returns if the given coordinate is inbounds
-		bool in_bounds(unsigned short int x, unsigned short int y);
+		bool in_bounds(unsigned short int x, unsigned short int y) const;
 		//! returns if the tile at the given x/y coordinate is walkable
 		bool is_walkable(unsigned short int x, unsigned short int y);
 		//! renders the game map
