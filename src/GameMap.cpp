@@ -10,7 +10,7 @@
 /**
  * Class constructor
  */
- GameMap::GameMap(unsigned int width, unsigned int height) {
+ GameMap::GameMap(const unsigned int width, const unsigned int height) {
  	// set the map width
  	this->width = width;
  	 // set the map height
@@ -51,7 +51,7 @@
  * @param y the y coordinate
  * @param tile the tile to set at the given coordinate
  */
- void GameMap::set_tile(unsigned short int x, unsigned short int y, const Tile& tile) {
+ void GameMap::set_tile(const unsigned short int x, const unsigned short int y, const Tile& tile) {
     if (x < width && y < height)
         tiles[x][y] = tile;
 }
@@ -64,7 +64,7 @@
  *
  * @return true if inbounds, otherwise false
  */
-bool GameMap::in_bounds(unsigned short int x, unsigned short int y) const {
+bool GameMap::in_bounds(const unsigned short int x, const unsigned short int y) const {
 	return (x > 0 && x < this->width && y > 0 && y < this->height);
 }
 
@@ -76,7 +76,7 @@ bool GameMap::in_bounds(unsigned short int x, unsigned short int y) const {
  *
  * @return true if the tile is walkable, otherwise false
  */
-bool GameMap::is_walkable(unsigned short int x, unsigned short int y) {
+bool GameMap::is_walkable(const unsigned short int x, const unsigned short int y) const {
 	return tiles[x][y].walkable;
 }
 
@@ -85,7 +85,7 @@ bool GameMap::is_walkable(unsigned short int x, unsigned short int y) {
  *
  * @param fb pointer to framebuffer
  */
-void GameMap::render(unsigned short *fb) {
+void GameMap::render(unsigned short *fb) const {
 	for(unsigned short int x = 0; x < this->width; x++) {
 		for(unsigned short int y = 0; y < this->height; y++) {
 			char buffer[2] = { tiles[x][y].dark.ch, '\0' };
