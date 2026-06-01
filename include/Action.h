@@ -14,6 +14,6 @@ class Action {
 		//! pure virtual destructor
 		virtual ~Action() = 0;
 		//! virtual function for handling movement
-		virtual void perform(Engine engine, Entity entity) = 0;
+		virtual void perform(Engine engine, Entity& entity) = 0;
 };
 #endif
