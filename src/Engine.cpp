@@ -35,16 +35,10 @@ void Engine::handle_events() {
 	Action* action = this->event_handler.ev_input();
 
 	// action is a pointer to MovementAction (or derived from it)
-	if (dynamic_cast<MovementAction*>(action) != NULL) {
-		if (MovementAction* moveAction = dynamic_cast<MovementAction*>(action)) {
+	if (action != NULL) {
 
-			// if the tile is walkable
-			if(game_map.is_walkable(player.getX() + moveAction->getDX(), player.getY() + moveAction->getDY())) {
-
-				// set player's new position
-				this->player.move(moveAction->getDX(), moveAction->getDY());
-			}
-		}
+			// set player's new position
+			action->perform(*this, player);
 	}
 }
 
