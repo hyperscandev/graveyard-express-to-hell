@@ -2,6 +2,8 @@
 #define MOVEMENTACTION
 
 #include "Action.h"
+#include "Engine.h"
+#include "Entity.h"
 
 /**
 * class for handling the player's movement

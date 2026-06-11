@@ -1,6 +1,7 @@
 // include the header
 #include "../include/Engine.h"
 #include "../include/InputHandlers.h"
+#include "../include/Action.h"
 
 //! framebuffer address
 unsigned short *fb = (unsigned short *) 0xA0400000;

@@ -1,8 +1,9 @@
 #ifndef ACTION_H
 #define ACTION_H
 
-#include "Entity.h"
-#include "Engine.h"
+// Forward declarations instead of includes
+class Engine;
+class Entity;
 
 /**
  * Action class
