@@ -1,5 +1,5 @@
-#ifndef MOVEMENTACTION
-#define MOVEMENTACTION
+#ifndef MOVEMENTACTION_H
+#define MOVEMENTACTION_H
 
 #include "Action.h"
 #include "Engine.h"
