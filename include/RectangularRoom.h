@@ -24,6 +24,10 @@ class RectangularRoom {
 		RectangularRoom(unsigned short int x, unsigned short int y, unsigned short int width, unsigned short int height);
 		//! returns the center point of the room
 		std::pair<int, int> center() const;
+		//! returns the x center point of the room
+		unsigned short int center_x() const;
+		//! returns the y center point of the room
+		unsigned short int center_y() const;
 		//! returns the inner area of the room
 		std::pair<Slice, Slice> inner() const;
 		//! returns if the room intersects another
