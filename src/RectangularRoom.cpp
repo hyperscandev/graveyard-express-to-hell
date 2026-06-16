@@ -16,6 +16,14 @@ std::pair<int, int> RectangularRoom::center() const {
 
 }
 
+unsigned short int RectangularRoom::center_x() const {
+	return ((this->x1 + this->x2) / 2);
+}
+
+unsigned short int RectangularRoom::center_y() const {
+	return ((this->y1 + this->y2) / 2);
+}
+
 std::pair<RectangularRoom::Slice, RectangularRoom::Slice> RectangularRoom::inner() const {
 	return std::make_pair(
 		RectangularRoom::Slice( static_cast<int>(x1) + 1, static_cast<int>(x2) ),
