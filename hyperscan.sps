@@ -65,7 +65,7 @@ Remote_Manner = Serial
 Remote_Manner = 
 Enable OSInfo = 0
 OSInfo Dll = 
-Project Path = C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell
+Project Path = C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell
 OSInfo INIT = 
 Show Cycles = 0
 Exception Debug = 0
@@ -314,6 +314,28 @@ PARAM=
 # End Source File
 
 # End Group
+# Begin Group "cpu"
+#PROP Default_Filter = 
+
+# Begin Source File
+SOURCE=..\..\..\..\src\cpu\cache.c
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=..\..\..\..\src\cpu\change_clk.c
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=..\..\..\..\src\cpu\discpu_funcs.s
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# End Group
 # Begin Source File
 SOURCE=..\..\..\..\src\libgloss.c
 USEPARAM=FALSE
@@ -481,6 +503,22 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\Tile_Types.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# End Group
+# Begin Group "cpuH"
+#PROP Default_Filter = 
+
+# Begin Source File
+SOURCE=..\..\..\..\include\cpu\cache.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=..\..\..\..\include\cpu\discpu_func.h
 USEPARAM=FALSE
 PARAM=
 # End Source File

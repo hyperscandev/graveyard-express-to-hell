@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		14:37:52	02/17/26
+#	Created by S+core IDE V2.6.1		10:24:20	07/10/26
 #
 ####################################################################################################
 
@@ -8,7 +8,7 @@ OUTDIR	= Debug
 APPDIR	= C:\Sunplus\S_CORE~1.1
 
 TOOLDIR	= C:\Sunplus\S_CORE~1.1\gnu\bin
-INCLUDES =  -I"C:/score-sdk/examples/hyperscan/all/graveyardexpresstohell/" -I"C:/score-sdk/include"
+INCLUDES =  -I"C:/score-sdk/examples/hyperscan/all/graveyard-express-to-hell/" -I"C:/score-sdk/include"
 LIBFOLDER = 
 
 CC	= "$(TOOLDIR)\score-elf-gcc"
@@ -21,7 +21,7 @@ RM	= "$(TOOLDIR)\rm"
 
 OBJCOPY	= "$(TOOLDIR)\score-elf-objcopy"
 OBJDUMP	= "$(TOOLDIR)\score-elf-objdump"
-LDSCRIPT	= "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\hyperscan_Prog.ld"
+LDSCRIPT	= "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\hyperscan_Prog.ld"
 
 CCDEFFLAG	= -mscore7 -mel -g -Wall
 CCADDFLAG	= -Dhyperscan
@@ -41,6 +41,9 @@ OBJFILES	=\
 	"$(OUTDIR)\hyperscan_startup.o"\
 	"$(OUTDIR)\main.o"\
 	"$(OUTDIR)\libgloss.o"\
+	"$(OUTDIR)\discpu_funcs.o"\
+	"$(OUTDIR)\change_clk.o"\
+	"$(OUTDIR)\cache.o"\
 	"$(OUTDIR)\Tile_Types.o"\
 	"$(OUTDIR)\RectangularRoom.o"\
 	"$(OUTDIR)\ProceduralGenerator.o"\
@@ -97,57 +100,69 @@ OBJFILES	=\
 	@echo uart.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\uart.d" -MT"$(OUTDIR)\uart.d" -o "$(OUTDIR)\uart.o" "C:\score-sdk\src\uart\uart.c" 
 
-"$(OUTDIR)\Action.o" "$(OUTDIR)\Action.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp"
+"$(OUTDIR)\Action.o" "$(OUTDIR)\Action.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Action.cpp"
 	@echo Action.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Action.d" -MT"$(OUTDIR)\Action.d" -o "$(OUTDIR)\Action.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Action.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Action.d" -MT"$(OUTDIR)\Action.d" -o "$(OUTDIR)\Action.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Action.cpp" 
 
-"$(OUTDIR)\Bresenham.o" "$(OUTDIR)\Bresenham.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Bresenham.cpp"
+"$(OUTDIR)\Bresenham.o" "$(OUTDIR)\Bresenham.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Bresenham.cpp"
 	@echo Bresenham.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Bresenham.d" -MT"$(OUTDIR)\Bresenham.d" -o "$(OUTDIR)\Bresenham.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Bresenham.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Bresenham.d" -MT"$(OUTDIR)\Bresenham.d" -o "$(OUTDIR)\Bresenham.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Bresenham.cpp" 
 
-"$(OUTDIR)\Engine.o" "$(OUTDIR)\Engine.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Engine.cpp"
+"$(OUTDIR)\Engine.o" "$(OUTDIR)\Engine.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Engine.cpp"
 	@echo Engine.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Engine.d" -MT"$(OUTDIR)\Engine.d" -o "$(OUTDIR)\Engine.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Engine.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Engine.d" -MT"$(OUTDIR)\Engine.d" -o "$(OUTDIR)\Engine.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Engine.cpp" 
 
-"$(OUTDIR)\Entity.o" "$(OUTDIR)\Entity.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Entity.cpp"
+"$(OUTDIR)\Entity.o" "$(OUTDIR)\Entity.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Entity.cpp"
 	@echo Entity.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Entity.d" -MT"$(OUTDIR)\Entity.d" -o "$(OUTDIR)\Entity.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Entity.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Entity.d" -MT"$(OUTDIR)\Entity.d" -o "$(OUTDIR)\Entity.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Entity.cpp" 
 
-"$(OUTDIR)\GameMap.o" "$(OUTDIR)\GameMap.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\GameMap.cpp"
+"$(OUTDIR)\GameMap.o" "$(OUTDIR)\GameMap.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\GameMap.cpp"
 	@echo GameMap.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\GameMap.d" -MT"$(OUTDIR)\GameMap.d" -o "$(OUTDIR)\GameMap.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\GameMap.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\GameMap.d" -MT"$(OUTDIR)\GameMap.d" -o "$(OUTDIR)\GameMap.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\GameMap.cpp" 
 
-"$(OUTDIR)\InputHandlers.o" "$(OUTDIR)\InputHandlers.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp"
+"$(OUTDIR)\InputHandlers.o" "$(OUTDIR)\InputHandlers.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\InputHandlers.cpp"
 	@echo InputHandlers.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\InputHandlers.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\InputHandlers.cpp" 
 
-"$(OUTDIR)\MovementAction.o" "$(OUTDIR)\MovementAction.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp"
+"$(OUTDIR)\MovementAction.o" "$(OUTDIR)\MovementAction.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\MovementAction.cpp"
 	@echo MovementAction.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\MovementAction.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\MovementAction.cpp" 
 
-"$(OUTDIR)\ProceduralGenerator.o" "$(OUTDIR)\ProceduralGenerator.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\ProceduralGenerator.cpp"
+"$(OUTDIR)\ProceduralGenerator.o" "$(OUTDIR)\ProceduralGenerator.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\ProceduralGenerator.cpp"
 	@echo ProceduralGenerator.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\ProceduralGenerator.d" -MT"$(OUTDIR)\ProceduralGenerator.d" -o "$(OUTDIR)\ProceduralGenerator.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\ProceduralGenerator.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\ProceduralGenerator.d" -MT"$(OUTDIR)\ProceduralGenerator.d" -o "$(OUTDIR)\ProceduralGenerator.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\ProceduralGenerator.cpp" 
 
-"$(OUTDIR)\RectangularRoom.o" "$(OUTDIR)\RectangularRoom.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\RectangularRoom.cpp"
+"$(OUTDIR)\RectangularRoom.o" "$(OUTDIR)\RectangularRoom.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\RectangularRoom.cpp"
 	@echo RectangularRoom.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\RectangularRoom.d" -MT"$(OUTDIR)\RectangularRoom.d" -o "$(OUTDIR)\RectangularRoom.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\RectangularRoom.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\RectangularRoom.d" -MT"$(OUTDIR)\RectangularRoom.d" -o "$(OUTDIR)\RectangularRoom.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\RectangularRoom.cpp" 
 
-"$(OUTDIR)\Tile_Types.o" "$(OUTDIR)\Tile_Types.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Tile_Types.cpp"
+"$(OUTDIR)\Tile_Types.o" "$(OUTDIR)\Tile_Types.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Tile_Types.cpp"
 	@echo Tile_Types.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Tile_Types.d" -MT"$(OUTDIR)\Tile_Types.d" -o "$(OUTDIR)\Tile_Types.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\Tile_Types.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\Tile_Types.d" -MT"$(OUTDIR)\Tile_Types.d" -o "$(OUTDIR)\Tile_Types.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\Tile_Types.cpp" 
+
+"$(OUTDIR)\cache.o" "$(OUTDIR)\cache.d": "C:\score-sdk\src\cpu\cache.c"
+	@echo cache.c
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\cache.d" -MT"$(OUTDIR)\cache.d" -o "$(OUTDIR)\cache.o" "C:\score-sdk\src\cpu\cache.c" 
+
+"$(OUTDIR)\change_clk.o" "$(OUTDIR)\change_clk.d": "C:\score-sdk\src\cpu\change_clk.c"
+	@echo change_clk.c
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\change_clk.d" -MT"$(OUTDIR)\change_clk.d" -o "$(OUTDIR)\change_clk.o" "C:\score-sdk\src\cpu\change_clk.c" 
+
+"$(OUTDIR)\discpu_funcs.o" "$(OUTDIR)\discpu_funcs.d": "C:\score-sdk\src\cpu\discpu_funcs.s"
+	@echo discpu_funcs.s
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) $(ASDEFFLAG) $(ASADDFLAG) -MMD -MP -MF"$(OUTDIR)\discpu_funcs.d" -MT"$(OUTDIR)\discpu_funcs.d" -o "$(OUTDIR)\discpu_funcs.o" "C:\score-sdk\src\cpu\discpu_funcs.s" 
 
 "$(OUTDIR)\libgloss.o" "$(OUTDIR)\libgloss.d": "C:\score-sdk\src\libgloss.c"
 	@echo libgloss.c
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\libgloss.d" -MT"$(OUTDIR)\libgloss.d" -o "$(OUTDIR)\libgloss.o" "C:\score-sdk\src\libgloss.c" 
 
-"$(OUTDIR)\main.o" "$(OUTDIR)\main.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\main.cpp"
+"$(OUTDIR)\main.o" "$(OUTDIR)\main.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\main.cpp"
 	@echo main.cpp
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\main.d" -MT"$(OUTDIR)\main.d" -o "$(OUTDIR)\main.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\src\main.cpp" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\main.d" -MT"$(OUTDIR)\main.d" -o "$(OUTDIR)\main.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\main.cpp" 
 
-"$(OUTDIR)\hyperscan_startup.o" "$(OUTDIR)\hyperscan_startup.d": "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\hyperscan_startup.s"
+"$(OUTDIR)\hyperscan_startup.o" "$(OUTDIR)\hyperscan_startup.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\hyperscan_startup.s"
 	@echo hyperscan_startup.s
-	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) $(ASDEFFLAG) $(ASADDFLAG) -MMD -MP -MF"$(OUTDIR)\hyperscan_startup.d" -MT"$(OUTDIR)\hyperscan_startup.d" -o "$(OUTDIR)\hyperscan_startup.o" "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\hyperscan_startup.s" 
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) $(ASDEFFLAG) $(ASADDFLAG) -MMD -MP -MF"$(OUTDIR)\hyperscan_startup.d" -MT"$(OUTDIR)\hyperscan_startup.d" -o "$(OUTDIR)\hyperscan_startup.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\hyperscan_startup.s" 
 
 
 all : "$(OUTDIR)" $(BINFILE)
@@ -157,7 +172,7 @@ all : "$(OUTDIR)" $(BINFILE)
 
 LINKLIB	= 
 
-$(BINFILE) : $(RESFILES) $(OBJFILES) $(LINKLIB) $(LDSCRIPT) "C:\score-sdk\examples\hyperscan\all\graveyardexpresstohell\Resource.h"
+$(BINFILE) : $(RESFILES) $(OBJFILES) $(LINKLIB) $(LDSCRIPT) "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\Resource.h"
 			@echo linking...
 			@$(CPP) $(CCDEFFLAG) $(CCADDFLAG) -B$(TOOLDIR) "Obj.lst" -o $(BINFILE) "Lib.lst" $(LIBFOLDER) $(LDDEFFLAG) $(LDADDFLAG)
 			@$(OBJCOPY) -O binary $@ $@.bin
@@ -170,6 +185,9 @@ DEPFILES	=\
 	"$(OUTDIR)\hyperscan_startup.d"\
 	"$(OUTDIR)\main.d"\
 	"$(OUTDIR)\libgloss.d"\
+	"$(OUTDIR)\discpu_funcs.d"\
+	"$(OUTDIR)\change_clk.d"\
+	"$(OUTDIR)\cache.d"\
 	"$(OUTDIR)\Tile_Types.d"\
 	"$(OUTDIR)\RectangularRoom.d"\
 	"$(OUTDIR)\ProceduralGenerator.d"\
