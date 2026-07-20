@@ -13,9 +13,6 @@ EventHandler::EventHandler(){
  * Gets user input and performs movement based on the input
  */
 Action* EventHandler::ev_input() {
- 
-	// read the controller
-	hs_controller_read();
 
 	/* if the dpad was pressed up */
 	if(controller[hs_controller_1].input.joystick_y >= 0xB0){
