@@ -23,6 +23,8 @@ class Engine {
 		//! renders player, entities and game map to the framebuffer
 		void render();
 		const GameMap& getGameMapInstance() const;
+		//! processes VBlank code
+		void onVBlank();
 	private:
 		//! stupid framebuffer for now
 		unsigned short *fb;
