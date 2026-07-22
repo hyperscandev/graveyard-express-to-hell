@@ -67,6 +67,15 @@ void Engine::render() {
 }
 
 /**
+ * Processes code during VBlank
+ *
+ */
+ void Engine::onVBlank() {
+ 	// read the controller
+	hs_controller_read();
+ }
+
+/**
  * returns the instance of GameMap
  *
  * @return GameMap instance
