@@ -13,6 +13,7 @@ This is the basic Hello World! example. It contains the very barebones code nece
 #include "../include/Entity.h"
 #include "../include/InputHandlers.h"
 #include "../include/Engine.h"
+#include "../include/InterruptsManager.h"
 #include <set>
 
 // constants
@@ -53,7 +54,18 @@ int main(){
 	// create instance of the game engine
 	Engine engine = Engine(entities, events, game_map, player);
 
+	// create instance of the interrupt manager
+	InterruptsManager& interrupts_manager = InterruptsManager::getInstance();
+
 	while(1){
+		// check if a VBlank iterrupt has occured
+		if(interrupts_manager.isFrameReady()) {
+			// run the vblank handler code in the engine class
+			engine.onVBlank();
+			// acknowledge and clear the flag
+			interrupts_manager.clearFrameReady();
+		}
+		
 		// render the screen
 		engine.render();
 
