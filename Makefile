@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-#	Created by S+core IDE V2.6.1		10:24:20	07/10/26
+#	Created by S+core IDE V2.6.1		17:23:10	07/16/26
 #
 ####################################################################################################
 
@@ -48,6 +48,7 @@ OBJFILES	=\
 	"$(OUTDIR)\RectangularRoom.o"\
 	"$(OUTDIR)\ProceduralGenerator.o"\
 	"$(OUTDIR)\MovementAction.o"\
+	"$(OUTDIR)\InterruptsManager.o"\
 	"$(OUTDIR)\InputHandlers.o"\
 	"$(OUTDIR)\GameMap.o"\
 	"$(OUTDIR)\Entity.o"\
@@ -124,6 +125,10 @@ OBJFILES	=\
 	@echo InputHandlers.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InputHandlers.d" -MT"$(OUTDIR)\InputHandlers.d" -o "$(OUTDIR)\InputHandlers.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\InputHandlers.cpp" 
 
+"$(OUTDIR)\InterruptsManager.o" "$(OUTDIR)\InterruptsManager.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\InterruptsManager.cpp"
+	@echo InterruptsManager.cpp
+	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\InterruptsManager.d" -MT"$(OUTDIR)\InterruptsManager.d" -o "$(OUTDIR)\InterruptsManager.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\InterruptsManager.cpp" 
+
 "$(OUTDIR)\MovementAction.o" "$(OUTDIR)\MovementAction.d": "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\MovementAction.cpp"
 	@echo MovementAction.cpp
 	@$(CC) -c $(CCDEFFLAG) $(CCADDFLAG) -B $(TOOLDIR) $(INCLUDES) -MMD -MP -MF"$(OUTDIR)\MovementAction.d" -MT"$(OUTDIR)\MovementAction.d" -o "$(OUTDIR)\MovementAction.o" "C:\score-sdk\examples\hyperscan\all\graveyard-express-to-hell\src\MovementAction.cpp" 
@@ -192,6 +197,7 @@ DEPFILES	=\
 	"$(OUTDIR)\RectangularRoom.d"\
 	"$(OUTDIR)\ProceduralGenerator.d"\
 	"$(OUTDIR)\MovementAction.d"\
+	"$(OUTDIR)\InterruptsManager.d"\
 	"$(OUTDIR)\InputHandlers.d"\
 	"$(OUTDIR)\GameMap.d"\
 	"$(OUTDIR)\Entity.d"\
