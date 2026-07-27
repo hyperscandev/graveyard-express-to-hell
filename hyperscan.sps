@@ -490,6 +490,12 @@ PARAM=
 # End Source File
 
 # Begin Source File
+SOURCE=.\include\InterruptsManager.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
 SOURCE=.\include\MovementAction.h
 USEPARAM=FALSE
 PARAM=
@@ -530,12 +536,6 @@ PARAM=
 # End Source File
 
 # End Group
-# Begin Source File
-SOURCE=.\include\InterruptsManager.h
-USEPARAM=FALSE
-PARAM=
-# End Source File
-
 # Begin Source File
 SOURCE=..\..\..\..\include\score7_constants.h
 USEPARAM=FALSE
