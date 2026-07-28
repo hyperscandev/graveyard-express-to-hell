@@ -11,11 +11,11 @@
 class InterruptsManager {
 	public:
 		//! returns if vblank has occurred
-		bool isFrameReady();
+		bool isFrameReady() const;
 		//! clears the vblank flag;
 		void clearFrameReady();
 		//! returns the current frameCounter;
-		unsigned long getFrameCounter();
+		unsigned long getFrameCounter() const;
 		//! returns instance of class
 		static InterruptsManager& getInstance();
 	private:
