@@ -38,7 +38,7 @@ void InterruptsManager::onVBlank() {
  * @return true if a VBlank has occured since the last check, otherwise false
  *
  */
-bool InterruptsManager::isFrameReady() {
+bool InterruptsManager::isFrameReady() const {
 	return frameReady;
 }
 
@@ -55,7 +55,7 @@ void InterruptsManager::clearFrameReady() {
  * @return the current number of frames processed by VBlank
  *
  */
- unsigned long InterruptsManager::getFrameCounter() {
+ unsigned long InterruptsManager::getFrameCounter() const {
  	return frameCounter;
 }
 
