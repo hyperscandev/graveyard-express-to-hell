@@ -21,10 +21,10 @@ class Engine {
 		//! handles user input
 		void handle_events();
 		//! renders player, entities and game map to the framebuffer
-		void render();
+		void render() const;
 		const GameMap& getGameMapInstance() const;
 		//! processes VBlank code
-		void onVBlank();
+		void onVBlank() const;
 	private:
 		//! stupid framebuffer for now
 		unsigned short *fb;
