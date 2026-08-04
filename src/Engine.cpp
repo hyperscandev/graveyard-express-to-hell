@@ -46,7 +46,7 @@ void Engine::handle_events() {
 /**
  * renders the game map, entities and player to the framebuffer(screen)
  */
-void Engine::render() {
+void Engine::render() const {
 	// draw the map
 	game_map.render(fb);
 
@@ -70,7 +70,7 @@ void Engine::render() {
  * Processes code during VBlank
  *
  */
- void Engine::onVBlank() {
+ void Engine::onVBlank() const {
  	// read the controller
 	hs_controller_read();
  }
