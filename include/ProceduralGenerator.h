@@ -13,7 +13,7 @@ typedef std::pair<int, int> Point;
 
 //! generates a dungeon
 GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_height);
-GameMap generate_dungeon(unsigned short int max_rooms, unsigned short int room_min_size, unsigned short int room_max_size, unsigned short int map_width, unsigned short int map_height, Entity &player);
+const GameMap generate_dungeon(const unsigned short int max_rooms, const unsigned short int room_min_size, const unsigned short int room_max_size, const unsigned short int map_width, const unsigned short int map_height, Entity &player);
 //! generates a tunnel between two rooms
 std::vector<Point> tunnel_between(const Point &start, const Point &end);
 #endif
