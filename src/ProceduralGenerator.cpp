@@ -54,7 +54,7 @@ GameMap generate_dungeon(unsigned short int map_width, unsigned short int map_he
  *
  * @return game map instance containing the dungeon
  */
-GameMap generate_dungeon(unsigned short int max_rooms, unsigned short int room_min_size, unsigned short int room_max_size, unsigned short int map_width, unsigned short int map_height, Entity &player) {
+const GameMap generate_dungeon(const unsigned short int max_rooms, const unsigned short int room_min_size, const unsigned short int room_max_size, const unsigned short int map_width, const unsigned short int map_height, Entity &player) {
 	// create instance of game map
 	GameMap dungeon = GameMap(map_width, map_height);
 
