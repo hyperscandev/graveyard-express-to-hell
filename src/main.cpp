@@ -49,7 +49,7 @@ int main(){
 	Entity player = Entity(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 5, "@", 0);
 
 	/* create a dungeon */
-	GameMap game_map = generate_dungeon(MAP_WIDTH, MAP_HEIGHT);
+	GameMap game_map = generate_dungeon(MAX_ROOMS, ROOM_MIN_SIZE, ROOM_MAX_SIZE, MAP_WIDTH, MAP_HEIGHT, player);
 
 	// create instance of the game engine
 	Engine engine = Engine(entities, events, game_map, player);
