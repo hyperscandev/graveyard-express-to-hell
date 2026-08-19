@@ -35,5 +35,9 @@ class GameMap {
 		unsigned int height;
 		//! vector of map tiles
 		std::vector<std::vector<Tile> > tiles;
+		//! vector of tiles the player can currently see
+		std::vector<std::vector<bool> > visible;
+		//! vector of tile Tiles the player has seen before
+		std::vector<std::vector<bool> > explored;
 };
 #endif
