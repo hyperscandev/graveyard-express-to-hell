@@ -22,10 +22,12 @@ struct Tile {
 	bool transparent;
 	// dark graphic of the tile
 	Graphic dark;
+	// light graphic of the tile
+	Graphic light;
 };
 
 //! helper function for defining a new tile
-Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char fg_r, const unsigned char fg_g, const unsigned char fg_b, const unsigned char bg_r, const unsigned char bg_g, const unsigned char bg_b);
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg_r, const unsigned char dark_fg_g, const unsigned char dark_fg_b, const unsigned char dark_bg_r, const unsigned char dark_bg_g, const unsigned char dark_bg_b, const unsigned char light_fg_r, const unsigned char light_fg_g, const unsigned char light_fg_b, const unsigned char light_bg_r, const unsigned char light_bg_g, const unsigned char light_bg_b);
 
 //! floor tile definition is defined in source
 extern Tile floor_tile;
