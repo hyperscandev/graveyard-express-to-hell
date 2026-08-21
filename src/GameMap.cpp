@@ -17,11 +17,19 @@
  	this->height = height;
  	// initalize the 2d array for the map tiles
  	tiles = std::vector<std::vector<Tile> >(width, std::vector<Tile>(height));
+ 	// initalize the 2d array for the map tiles the player sees
+ 	visible = std::vector<std::vector<bool> >(width, std::vector<bool>(height));
+ 	// initalize the 2d array for the map tiles the player has seen
+ 	explored = std::vector<std::vector<bool> >(width, std::vector<bool>(height));
  	
- 	/** fill the game map entirely with walls; the procedural generator will carve out rooms later */
+ 	/** fill the game map entirely with walls; the procedural generator will carve out rooms later
+ 	 *  also initalize all tiles the player sees and seen to false 
+ 	 */
  	for(unsigned short int x = 0; x < this->width; x++) {
 		for(unsigned short int y = 0; y < this->height; y++) {
 			tiles[x][y] = wall_tile;
+			visible[x][y] = false;
+			explored[x][y] = false;
 		}
  	}
  }
