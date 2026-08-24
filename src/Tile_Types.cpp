@@ -7,22 +7,30 @@
  * @param is the tile walkable
  * @param is the tile transparent
  * @param ch character for the tile
- * @param fg_r intensitiy of red primary for foreground
- * @param fg_g intensitiy of green primary for foreground
- * @param fg_b intensitiy of blue primary for foreground
- * @param bg_r intensitiy of red primary for background
- * @param bg_g intensitiy of green primary for background
- * @param bg_b intensitiy of blue primary for background
+ * @param dark_fg_r intensitiy of red primary for dark foreground
+ * @param dark_fg_g intensitiy of green primary for dark foreground
+ * @param dark_fg_b intensitiy of blue primary for dark foreground
+ * @param dark_bg_r intensitiy of red primary for dark background
+ * @param dark_bg_g intensitiy of green primary for dark background
+ * @param dark_bg_b intensitiy of blue primary for dark background
+  * @param light_fg_r intensitiy of red primary for light foreground
+ * @param light_fg_g intensitiy of green primary for light foreground
+ * @param light_fg_b intensitiy of blue primary for light foreground
+ * @param light_bg_r intensitiy of red primary for light background
+ * @param light_bg_g intensitiy of green primary for light background
+ * @param light_bg_b intensitiy of blue primary for light background
  *
  * @return new Tile struct
  */
-Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char fg_r, const unsigned char fg_g, const unsigned char fg_b, const unsigned char bg_r, const unsigned char bg_g, const unsigned char bg_b) {
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg_r, const unsigned char dark_fg_g, const unsigned char dark_fg_b, const unsigned char dark_bg_r, const unsigned char dark_bg_g, const unsigned char dark_bg_b, const unsigned char light_fg_r, const unsigned char light_fg_g, const unsigned char light_fg_b, const unsigned char light_bg_r, const unsigned char light_bg_g, const unsigned char light_bg_b) {
 	Tile tile;
     tile.walkable = walkable;
     tile.transparent = transparent;
     tile.dark.ch = ch;
-    tile.dark.fg = RGB565(fg_r, fg_g, fg_b);
-    tile.dark.bg = RGB565(bg_r, bg_g, bg_b);
+    tile.dark.fg = RGB565(dark_fg_r, dark_fg_g, dark_fg_b);
+    tile.dark.bg = RGB565(dark_bg_r, dark_bg_g, dark_bg_b);
+    tile.light.fg = RGB565(light_fg_r, light_fg_g, light_fg_b);
+    tile.light.bg = RGB565(light_bg_r, light_bg_g, light_bg_b);
     return tile;
 }
 
