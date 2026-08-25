@@ -39,8 +39,10 @@ Tile floor_tile = new_tile(
     true, // walkable
     true, // transparent
     '.', // character code
-    100, 100, 100, // fg grey
-    0, 0, 0 // bg black
+    100, 100, 100, // dark fg grey
+    0, 0, 0, // dark bg black
+    200, 200, 200, // light fg grey
+    0, 0, 0 // light bg black
 );
 
 //! wall tile definition
@@ -48,6 +50,8 @@ Tile wall_tile = new_tile(
     false, // walkable
     false, // transparent
     '#', // character code
-    100, 100, 100, // fg grey
-    0, 0, 0 // bg black
+    100, 100, 100, // dark fg grey
+    0, 0, 0, // dark bg black
+    200, 200, 200, // light fg grey
+    0, 0, 0 // light bg black
 );
