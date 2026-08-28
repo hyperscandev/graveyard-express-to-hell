@@ -89,6 +89,40 @@ bool GameMap::is_walkable(const unsigned short int x, const unsigned short int y
 }
 
 /**
+ * computes a field of view from a given radius for the players position
+ *
+ * @param px the x coordinate of the origin point the field of view is calculated from
+ * @param py the y coordinate of the origin point the field of view is calculated from
+ * @param radius how many tiles out from (px, py) is visible, in tile units
+ */
+void GameMap::compute_fov(int px, int py, int radius) {
+    int r2 = radius * radius;
+    for (int y = py - radius; y <= py + radius; ++y) {
+        for (int x = px - radius; x <= px + radius; ++x) {
+            if (x < 0 || y < 0) continue; // guard before hitting unsigned params
+            if (!in_bounds(static_cast<unsigned short int>(x),
+                            static_cast<unsigned short int>(y))) continue;
+            int dx = x - px;
+            int dy = y - py;
+            if (dx * dx + dy * dy > r2) continue; // outside circle
+            std::vector<Point> line = bresenham(px, py, x, y);
+            for (std::size_t i = 0; i < line.size(); ++i) {
+                const Point& p = line[i];
+                int lx = p.first;
+                int ly = p.second;
+                if (!(lx == px && ly == py) &&
+                    !is_walkable(static_cast<unsigned short int>(lx),
+                                 static_cast<unsigned short int>(ly))) {
+                    break; // blocked before reaching target
+                }
+                visible[ly][lx] = true;
+                if (lx == x && ly == y) break; // reached target
+            }
+        }
+    }
+}
+
+/**
  * Renders the map
  *
  * @param fb pointer to framebuffer
