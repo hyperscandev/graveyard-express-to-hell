@@ -89,6 +89,20 @@ bool GameMap::is_walkable(const unsigned short int x, const unsigned short int y
 }
 
 /**
+ * returns if the tile at the given x/y coordinate is transparent (i.e. does not block line of sight)
+ * note: distinct from walkability - a tile can be transparent but not walkable (e.g. a chasm)
+ * or walkable but not transparent (e.g. tall grass)
+ *
+ * @param x the x coordinate
+ * @param y the y coordinate
+ *
+ * @return true if the tile is transparent, otherwise false
+ */
+bool GameMap::is_transparent(const unsigned short int x, const unsigned short int y) const {
+	return tiles[x][y].transparent;
+}
+
+/**
  * computes a field of view from a given radius for the players position
  *
  * @param px the x coordinate of the origin point the field of view is calculated from
