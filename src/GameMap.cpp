@@ -110,6 +110,11 @@ bool GameMap::is_transparent(const unsigned short int x, const unsigned short in
  * @param radius how many tiles out from (px, py) is visible, in tile units
  */
 void GameMap::compute_fov(int px, int py, int radius) {
+	// reset visible array
+	for (unsigned short int x = 0; x < width; ++x) {
+		std::fill(visible[x].begin(), visible[x].end(), false);
+	}
+
     int r2 = radius * radius;
     for (int y = py - radius; y <= py + radius; ++y) {
         for (int x = px - radius; x <= px + radius; ++x) {
@@ -125,11 +130,11 @@ void GameMap::compute_fov(int px, int py, int radius) {
                 int lx = p.first;
                 int ly = p.second;
                 if (!(lx == px && ly == py) &&
-                    !is_walkable(static_cast<unsigned short int>(lx),
+                    !is_transparent(static_cast<unsigned short int>(lx),
                                  static_cast<unsigned short int>(ly))) {
                     break; // blocked before reaching target
                 }
-                visible[ly][lx] = true;
+                visible[lx][ly] = true;
                 if (lx == x && ly == y) break; // reached target
             }
         }
