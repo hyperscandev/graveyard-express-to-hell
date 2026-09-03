@@ -73,7 +73,7 @@
  * @return true if inbounds, otherwise false
  */
 bool GameMap::in_bounds(const unsigned short int x, const unsigned short int y) const {
-	return (x > 0 && x < this->width && y > 0 && y < this->height);
+	return (x < this->width && y < this->height);
 }
 
 /**
