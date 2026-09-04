@@ -105,16 +105,17 @@ bool GameMap::is_transparent(const unsigned short int x, const unsigned short in
 /**
  * computes a field of view from a given radius for the players position
  *
+ * Note: mirrors Bresenham.cpp's algorithm, intentionally not calling it
+ *
  * @param px the x coordinate of the origin point the field of view is calculated from
  * @param py the y coordinate of the origin point the field of view is calculated from
  * @param radius how many tiles out from (px, py) is visible, in tile units
  */
 void GameMap::compute_fov(int px, int py, int radius) {
-	// reset visible array
-	for (unsigned short int x = 0; x < width; ++x) {
-		std::fill(visible[x].begin(), visible[x].end(), false);
-	}
-
+    // reset visible
+    for (unsigned short int x = 0; x < width; ++x) {
+        std::fill(visible[x].begin(), visible[x].end(), false);
+    }
     int r2 = radius * radius;
     for (int y = py - radius; y <= py + radius; ++y) {
         for (int x = px - radius; x <= px + radius; ++x) {
@@ -124,18 +125,25 @@ void GameMap::compute_fov(int px, int py, int radius) {
             int dx = x - px;
             int dy = y - py;
             if (dx * dx + dy * dy > r2) continue; // outside circle
-            std::vector<Point> line = bresenham(px, py, x, y);
-            for (std::size_t i = 0; i < line.size(); ++i) {
-                const Point& p = line[i];
-                int lx = p.first;
-                int ly = p.second;
+            // inline Bresenham walk from (px, py) to (x, y) - avoids
+            // allocating a Point vector per target tile
+            int lx = px, ly = py;
+            int adx = std::abs(x - px);
+            int ady = std::abs(y - py);
+            int sx = (px < x) ? 1 : -1;
+            int sy = (py < y) ? 1 : -1;
+            int err = adx - ady;
+            while (true) {
                 if (!(lx == px && ly == py) &&
                     !is_transparent(static_cast<unsigned short int>(lx),
-                                 static_cast<unsigned short int>(ly))) {
+                                     static_cast<unsigned short int>(ly))) {
                     break; // blocked before reaching target
                 }
                 visible[lx][ly] = true;
                 if (lx == x && ly == y) break; // reached target
+                int e2 = 2 * err;
+                if (e2 > -ady) { err -= ady; lx += sx; }
+                if (e2 < adx) { err += adx; ly += sy; }
             }
         }
     }
