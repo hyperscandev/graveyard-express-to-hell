@@ -155,9 +155,11 @@ void GameMap::compute_fov(int px, int py, int radius) {
  * @param fb pointer to framebuffer
  */
 void GameMap::render(unsigned short *fb) const {
+	char buffer[2];
+	buffer[1] = '\0';
 	for(unsigned short int x = 0; x < this->width; x++) {
 		for(unsigned short int y = 0; y < this->height; y++) {
-			char buffer[2] = { tiles[x][y].dark.ch, '\0' };
+			buffer[0] = tiles[x][y].dark.ch;
 			tv_print(fb, x, y, buffer);
 		}
 	}
