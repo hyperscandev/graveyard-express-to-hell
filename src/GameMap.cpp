@@ -159,7 +159,7 @@ void GameMap::render(unsigned short *fb) const {
 	buffer[1] = '\0';
 	for(unsigned short int x = 0; x < this->width; x++) {
 		for(unsigned short int y = 0; y < this->height; y++) {
-			buffer[0] = tiles[x][y].dark.ch;
+			buffer[0] = tiles[x][y].ch;
 			tv_print(fb, x, y, buffer);
 		}
 	}

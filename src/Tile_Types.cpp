@@ -26,11 +26,11 @@ Tile new_tile(const bool walkable, const bool transparent, const unsigned char c
 	Tile tile;
     tile.walkable = walkable;
     tile.transparent = transparent;
-    tile.dark.ch = ch;
-    tile.dark.fg = RGB565(dark_fg_r, dark_fg_g, dark_fg_b);
-    tile.dark.bg = RGB565(dark_bg_r, dark_bg_g, dark_bg_b);
-    tile.light.fg = RGB565(light_fg_r, light_fg_g, light_fg_b);
-    tile.light.bg = RGB565(light_bg_r, light_bg_g, light_bg_b);
+    tile.ch = ch;
+    tile.dark_foreground_palette = RGB565(dark_fg_r, dark_fg_g, dark_fg_b);
+    tile.dark_background_palette = RGB565(dark_bg_r, dark_bg_g, dark_bg_b);
+    tile.light_foreground_palette = RGB565(light_fg_r, light_fg_g, light_fg_b);
+    tile.light_background_palette = RGB565(light_bg_r, light_bg_g, light_bg_b);
     return tile;
 }
 
