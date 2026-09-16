@@ -450,7 +450,23 @@ PARAM=
 # End Source File
 
 # End Group
-# Begin Group "game"
+# Begin Group "cpuH"
+#PROP Default_Filter = 
+
+# Begin Source File
+SOURCE=..\..\..\..\include\cpu\cache.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# Begin Source File
+SOURCE=..\..\..\..\include\cpu\discpu_func.h
+USEPARAM=FALSE
+PARAM=
+# End Source File
+
+# End Group
+# Begin Group "gameH"
 #PROP Default_Filter = 
 
 # Begin Source File
@@ -515,22 +531,6 @@ PARAM=
 
 # Begin Source File
 SOURCE=.\include\Tile_Types.h
-USEPARAM=FALSE
-PARAM=
-# End Source File
-
-# End Group
-# Begin Group "cpuH"
-#PROP Default_Filter = 
-
-# Begin Source File
-SOURCE=..\..\..\..\include\cpu\cache.h
-USEPARAM=FALSE
-PARAM=
-# End Source File
-
-# Begin Source File
-SOURCE=..\..\..\..\include\cpu\discpu_func.h
 USEPARAM=FALSE
 PARAM=
 # End Source File
