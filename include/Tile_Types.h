@@ -3,15 +3,14 @@
 
 // include required libraries
 #include "tv/tv.h"
+#include "Palette.h"
 
 //! struct for a single graphic
 struct Graphic {
-	// character associated with the graphic
-	unsigned char ch;
-	// foreground color
-	unsigned short fg;
-	// background color
-	unsigned short bg;
+	// index into plalette[] for foreground color
+	unsigned char fg;
+	// index into plalette[] for background color
+	unsigned char bg;
 };
 
 //! struct for a single tile
@@ -22,18 +21,14 @@ struct Tile {
 	bool transparent : 1;
 	// glyph of the tile
 	unsigned char ch;
-	// palette index to dark foreground graphic color of the tile
-	unsigned char dark_foreground_palette;
-	// palette index to dark background graphic color of the tile
-	unsigned char dark_background_palette;
-	// palette index to light foreground graphic color of the tile
-    unsigned char light_foreground_palette;
-    // palette index to light background graphic color of the tile
-    unsigned char light_background_palette;
+	// dark foreground color of the tile
+	Graphic dark;
+	// light foreground color of the tile
+    Graphic light;
 };
 
 //! helper function for defining a new tile
-Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg_r, const unsigned char dark_fg_g, const unsigned char dark_fg_b, const unsigned char dark_bg_r, const unsigned char dark_bg_g, const unsigned char dark_bg_b, const unsigned char light_fg_r, const unsigned char light_fg_g, const unsigned char light_fg_b, const unsigned char light_bg_r, const unsigned char light_bg_g, const unsigned char light_bg_b);
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg, const unsigned char dark_bg, const unsigned char light_fg, const unsigned char light_bg);
 
 //! floor tile definition is defined in source
 extern Tile floor_tile;
