@@ -22,15 +22,15 @@
  *
  * @return new Tile struct
  */
-Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg_r, const unsigned char dark_fg_g, const unsigned char dark_fg_b, const unsigned char dark_bg_r, const unsigned char dark_bg_g, const unsigned char dark_bg_b, const unsigned char light_fg_r, const unsigned char light_fg_g, const unsigned char light_fg_b, const unsigned char light_bg_r, const unsigned char light_bg_g, const unsigned char light_bg_b) {
+Tile new_tile(const bool walkable, const bool transparent, const unsigned char ch, const unsigned char dark_fg, const unsigned char dark_bg, const unsigned char light_fg, const unsigned char light_bg) {
 	Tile tile;
     tile.walkable = walkable;
     tile.transparent = transparent;
     tile.ch = ch;
-    tile.dark_foreground_palette = RGB565(dark_fg_r, dark_fg_g, dark_fg_b);
-    tile.dark_background_palette = RGB565(dark_bg_r, dark_bg_g, dark_bg_b);
-    tile.light_foreground_palette = RGB565(light_fg_r, light_fg_g, light_fg_b);
-    tile.light_background_palette = RGB565(light_bg_r, light_bg_g, light_bg_b);
+    tile.dark.fg = dark_fg;
+    tile.dark.bg = dark_bg;
+    tile.light.fg = light_fg;
+    tile.light.bg = light_bg;
     return tile;
 }
 
@@ -39,10 +39,10 @@ Tile floor_tile = new_tile(
     true, // walkable
     true, // transparent
     '.', // character code
-    100, 100, 100, // dark fg grey
-    0, 0, 0, // dark bg black
-    200, 200, 200, // light fg grey
-    0, 0, 0 // light bg black
+    PAL_GREY_DARK, // dark fg grey
+    PAL_BLACK, // dark bg black
+    PAL_GREY_LIGHT, // light fg grey
+    PAL_BLACK // light bg black
 );
 
 //! wall tile definition
@@ -50,8 +50,8 @@ Tile wall_tile = new_tile(
     false, // walkable
     false, // transparent
     '#', // character code
-    100, 100, 100, // dark fg grey
-    0, 0, 0, // dark bg black
-    200, 200, 200, // light fg grey
-    0, 0, 0 // light bg black
+    PAL_GREY_DARK, // dark fg grey
+    PAL_BLACK, // dark bg black
+    PAL_GREY_LIGHT, // light fg grey
+    PAL_BLACK // light bg black
 );
