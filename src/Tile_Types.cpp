@@ -4,21 +4,13 @@
 /**
  * Helper function for creating new Tile definitions
  *
- * @param is the tile walkable
- * @param is the tile transparent
+ * @param walkable is the tile walkable
+ * @param transparent is the tile transparent
  * @param ch character for the tile
- * @param dark_fg_r intensitiy of red primary for dark foreground
- * @param dark_fg_g intensitiy of green primary for dark foreground
- * @param dark_fg_b intensitiy of blue primary for dark foreground
- * @param dark_bg_r intensitiy of red primary for dark background
- * @param dark_bg_g intensitiy of green primary for dark background
- * @param dark_bg_b intensitiy of blue primary for dark background
-  * @param light_fg_r intensitiy of red primary for light foreground
- * @param light_fg_g intensitiy of green primary for light foreground
- * @param light_fg_b intensitiy of blue primary for light foreground
- * @param light_bg_r intensitiy of red primary for light background
- * @param light_bg_g intensitiy of green primary for light background
- * @param light_bg_b intensitiy of blue primary for light background
+ * @param dark_fg palette index for dark-state foreground color
+ * @param dark_bg palette index for dark-state background color
+ * @param light_fg palette index for light-state foreground color
+ * @param light_bg palette index for light-state background color
  *
  * @return new Tile struct
  */
