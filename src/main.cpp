@@ -9,6 +9,7 @@ This is the basic Hello World! example. It contains the very barebones code nece
 */
 
 #include "tv/tv.h"
+#include "../include/Palette.h"
 #include "../include/ProceduralGenerator.h"
 #include "../include/Entity.h"
 #include "../include/InputHandlers.h"
@@ -38,6 +39,9 @@ int main(){
 	 as default.
 	*/
 	tv_init(RESOLUTION_640_480, COLOR_RGB565, 0xA0400000, 0xA0400000, 0xA0400000);
+
+	// initialize the palette
+	init_palette();
 
 	// Set of entities
 	std::set<Entity> entities;
