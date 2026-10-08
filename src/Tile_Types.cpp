@@ -26,6 +26,8 @@ Tile new_tile(const bool walkable, const bool transparent, const unsigned char c
     return tile;
 }
 
+const Graphic SHROUD = { PAL_WHITE, PAL_BLACK };
+
 //! floor tile definition
 Tile floor_tile = new_tile(
     true, // walkable
