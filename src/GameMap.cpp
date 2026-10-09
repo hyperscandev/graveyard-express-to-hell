@@ -157,10 +157,16 @@ void GameMap::compute_fov(int px, int py, int radius) {
 void GameMap::render(unsigned short *fb) const {
 	char buffer[2];
 	buffer[1] = '\0';
-	for(unsigned short int x = 0; x < this->width; x++) {
-		for(unsigned short int y = 0; y < this->height; y++) {
+	for(unsigned short x = 0; x < width; x++) {
+		for(unsigned short y = 0; y < height; y++) {
 			buffer[0] = tiles[x][y].ch;
-			tv_print(fb, x, y, buffer);
+			if(visible[x][y]) {
+				tv_print(fb, x, y, buffer);
+			} else if (explored[x][y]) {
+				tv_print(fb, x, y, buffer);
+			} else {
+				tv_print(fb, x, y, " ");
+			}
 		}
 	}
 }
