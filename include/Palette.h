@@ -12,6 +12,7 @@ extern unsigned short palette[PALETTE_SIZE];
 // named palette slots — add more as you need new colors
 enum PaletteIndex {
 	PAL_BLACK = 0,
+	PAL_WHITE,
 	PAL_GREY_DARK,
 	PAL_GREY_LIGHT,
 	PAL_COUNT
