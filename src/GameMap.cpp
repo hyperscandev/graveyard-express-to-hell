@@ -112,41 +112,41 @@ bool GameMap::is_transparent(const unsigned short int x, const unsigned short in
  * @param radius how many tiles out from (px, py) is visible, in tile units
  */
 void GameMap::compute_fov(int px, int py, int radius) {
-    // reset visible
-    for (unsigned short int x = 0; x < width; ++x) {
-        std::fill(visible[x].begin(), visible[x].end(), false);
-    }
-    int r2 = radius * radius;
-    for (int y = py - radius; y <= py + radius; ++y) {
-        for (int x = px - radius; x <= px + radius; ++x) {
-            if (x < 0 || y < 0) continue; // guard before hitting unsigned params
-            if (!in_bounds(static_cast<unsigned short int>(x),
-                            static_cast<unsigned short int>(y))) continue;
-            int dx = x - px;
-            int dy = y - py;
-            if (dx * dx + dy * dy > r2) continue; // outside circle
-            // inline Bresenham walk from (px, py) to (x, y) - avoids
-            // allocating a Point vector per target tile
-            int lx = px, ly = py;
-            int adx = std::abs(x - px);
-            int ady = std::abs(y - py);
-            int sx = (px < x) ? 1 : -1;
-            int sy = (py < y) ? 1 : -1;
-            int err = adx - ady;
-            while (true) {
-                if (!(lx == px && ly == py) &&
-                    !is_transparent(static_cast<unsigned short int>(lx),
-                                     static_cast<unsigned short int>(ly))) {
-                    break; // blocked before reaching target
-                }
-                visible[lx][ly] = true;
-                if (lx == x && ly == y) break; // reached target
-                int e2 = 2 * err;
-                if (e2 > -ady) { err -= ady; lx += sx; }
-                if (e2 < adx) { err += adx; ly += sy; }
-            }
-        }
-    }
+	// reset visible
+	for (unsigned short int x = 0; x < width; ++x) {
+		std::fill(visible[x].begin(), visible[x].end(), false);
+	}
+	int r2 = radius * radius;
+	for (int y = py - radius; y <= py + radius; ++y) {
+		for (int x = px - radius; x <= px + radius; ++x) {
+			if (x < 0 || y < 0) continue; // guard before hitting unsigned params
+			if (!in_bounds(static_cast<unsigned short int>(x),
+							static_cast<unsigned short int>(y))) continue;
+			int dx = x - px;
+			int dy = y - py;
+			if (dx * dx + dy * dy > r2) continue; // outside circle
+			// inline Bresenham walk from (px, py) to (x, y) - avoids
+			// allocating a Point vector per target tile
+			int lx = px, ly = py;
+			int adx = std::abs(x - px);
+			int ady = std::abs(y - py);
+			int sx = (px < x) ? 1 : -1;
+			int sy = (py < y) ? 1 : -1;
+			int err = adx - ady;
+			while (true) {
+				visible[lx][ly] = true;
+				if (!(lx == px && ly == py) &&
+					!is_transparent(static_cast<unsigned short int>(lx),
+									static_cast<unsigned short int>(ly))) {
+					break; // blocked before reaching target
+				}
+				if (lx == x && ly == y) break; // reached target
+				int e2 = 2 * err;
+				if (e2 > -ady) { err -= ady; lx += sx; }
+				if (e2 < adx) { err += adx; ly += sy; }
+			}
+		}
+	}
 }
 
 /**
