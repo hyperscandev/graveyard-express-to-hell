@@ -106,6 +106,7 @@ bool GameMap::is_transparent(const unsigned short int x, const unsigned short in
  * computes a field of view from a given radius for the players position
  *
  * Note: mirrors Bresenham.cpp's algorithm, intentionally not calling it
+ * Also marks every tile it makes visible as explored
  *
  * @param px the x coordinate of the origin point the field of view is calculated from
  * @param py the y coordinate of the origin point the field of view is calculated from
@@ -135,6 +136,8 @@ void GameMap::compute_fov(int px, int py, int radius) {
 			int err = adx - ady;
 			while (true) {
 				visible[lx][ly] = true;
+				// anything seen is remembered
+				explored[lx][ly] = true;
 				if (!(lx == px && ly == py) &&
 					!is_transparent(static_cast<unsigned short int>(lx),
 									static_cast<unsigned short int>(ly))) {
