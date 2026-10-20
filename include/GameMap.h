@@ -29,6 +29,8 @@ class GameMap {
 		bool is_walkable(const unsigned short int x, const unsigned short int y) const;
 		//! returns if the tile at the given x/y coordinate is transparent
 		bool is_transparent(const unsigned short int x, const unsigned short int y) const;
+		//! returns if the tile at the given x/y coordinate is visible
+		bool is_visible(const unsigned short int x, const unsigned short int y) const;
 		//! computes a field of view
 		void compute_fov(int px, int py, int radius);
 		//! renders the game map
