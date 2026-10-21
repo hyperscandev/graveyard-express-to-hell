@@ -103,6 +103,18 @@ bool GameMap::is_transparent(const unsigned short int x, const unsigned short in
 }
 
 /**
+ * returns if the tile at the given x/y coordinate is visible (i.e. within line of sight)
+ *
+ * @param x the x coordinate
+ * @param y the y coordinate
+ *
+ * @return true if the tile is visible, otherwise false
+ */
+bool GameMap::is_visible(const unsigned short int x, const unsigned short int y) const {
+	return visible[x][y];
+}
+
+/**
  * computes a field of view from a given radius for the players position
  *
  * Note: mirrors Bresenham.cpp's algorithm, intentionally not calling it
