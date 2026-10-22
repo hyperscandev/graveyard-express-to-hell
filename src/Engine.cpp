@@ -50,14 +50,13 @@ void Engine::render() const {
 	// draw the map
 	game_map.render(fb);
 
-	for (std::set<Entity>::iterator it = entities.begin(); it != entities.end(); ++it) {
-		Entity entity = *it;
+	for (std::set<Entity>::const_iterator it = entities.begin(); it != entities.end(); ++it) {
 		
 		// erase the entity from the previous position
-		tv_print(fb, entity.getPrevX(), entity.getPrevY(), " ");
+		tv_print(fb, it->getPrevX(), it->getPrevY(), " ");
 
 		// draw the entity on the screen
-		tv_print(fb, entity.getX(), entity.getY(), entity.getChar());
+		tv_print(fb, it->getX(), it->getY(), it->getChar());
 	}
 		// erase the player from the previous position
 		tv_print(fb, player.getPrevX(), player.getPrevY(), " ");
