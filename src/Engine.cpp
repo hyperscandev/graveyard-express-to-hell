@@ -25,7 +25,6 @@ Engine::Engine(std::set<Entity> entities, EventHandler& event_handler, GameMap g
 	this->game_map = game_map;
 	// store instance of player instance
 	this->player = player;
-	
 }
 
 /**
@@ -41,6 +40,9 @@ void Engine::handle_events() {
 			// set player's new position
 			action->perform(*this, player);
 	}
+
+	// # update the FOV before the players next action
+	game_map.compute_fov(player.getX(), player.getY(), 8);
 }
 
 /**
