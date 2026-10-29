@@ -64,7 +64,10 @@ void Engine::render() const {
 
 	// draw all the entities in their new positions
 	for (std::set<Entity>::const_iterator it = entities.begin(); it != entities.end(); ++it) {
-		tv_print(fb, it->getX(), it->getY(), it->getChar());
+		// only if they are within the player's field of view
+		if (game_map.is_visible(it->getX(), it->getY())) {
+			tv_print(fb, it->getX(), it->getY(), it->getChar());
+		}
 	}
 
 	// draw the player on the screen
